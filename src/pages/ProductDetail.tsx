@@ -8,6 +8,10 @@ const ProductDetail: React.FC = () => {
   const { getProduct } = useProducts();
   const product = getProduct(id!);
 
+  // Debug: Log the ID and product lookup
+  console.log('Product ID from URL:', id);
+  console.log('Product found:', product);
+
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedColor, setSelectedColor] = useState('');
@@ -152,7 +156,20 @@ Please confirm availability.`;
                   </button>
                 ))
               ) : (
-                <span className="text-gray-500 text-sm">No sizes available</span>
+                <div className="flex flex-wrap gap-2">
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    S
+                  </button>
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    M
+                  </button>
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    L
+                  </button>
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    XL
+                  </button>
+                </div>
               )}
             </div>
           </div>
@@ -176,7 +193,17 @@ Please confirm availability.`;
                   </button>
                 ))
               ) : (
-                <span className="text-gray-500 text-sm">No colors available</span>
+                <div className="flex flex-wrap gap-2">
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    Navy Blue
+                  </button>
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    Coral Pink
+                  </button>
+                  <button className="px-4 py-2 border border-gray-300 rounded-md transition-colors hover:border-gray-400">
+                    Mint Green
+                  </button>
+                </div>
               )}
             </div>
           </div>
@@ -196,7 +223,9 @@ Please confirm availability.`;
               >
                 -
               </button>
-              <span className="text-lg font-semibold w-12 text-center border border-gray-300 rounded-md py-1 bg-white">{quantity}</span>
+              <div className="w-16 h-10 border border-gray-300 rounded-md bg-white flex items-center justify-center">
+                <span className="text-lg font-semibold text-gray-900">{quantity}</span>
+              </div>
               <button
                 onClick={() => handleQuantityChange(quantity + 1)}
                 disabled={quantity >= product.stock}
