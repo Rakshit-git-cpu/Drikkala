@@ -17,6 +17,11 @@ const ProductDetail: React.FC = () => {
     return <Navigate to="/collections" replace />;
   }
 
+  // Debug: Log product data
+  console.log('Product data:', product);
+  console.log('Sizes:', product.sizes);
+  console.log('Colors:', product.colors);
+
   const handleWhatsAppOrder = () => {
     const message = `Hi Drik Kala! ✨
 I'd like to order:
@@ -129,11 +134,11 @@ Please confirm availability.`;
           <p className="text-gray-700 mb-8 leading-relaxed">{product.description}</p>
 
           {/* Size Selection */}
-          {product.sizes.length > 0 && (
-            <div className="mb-6">
-              <h3 className="font-semibold text-gray-900 mb-3">Size</h3>
-              <div className="flex flex-wrap gap-2">
-                {product.sizes.map((size) => (
+          <div className="mb-6">
+            <h3 className="font-semibold text-gray-900 mb-3">Size</h3>
+            <div className="flex flex-wrap gap-2">
+              {product.sizes && product.sizes.length > 0 ? (
+                product.sizes.map((size) => (
                   <button
                     key={size}
                     onClick={() => setSelectedSize(size)}
@@ -145,17 +150,19 @@ Please confirm availability.`;
                   >
                     {size}
                   </button>
-                ))}
-              </div>
+                ))
+              ) : (
+                <span className="text-gray-500 text-sm">No sizes available</span>
+              )}
             </div>
-          )}
+          </div>
 
           {/* Color Selection */}
-          {product.colors.length > 0 && (
-            <div className="mb-6">
-              <h3 className="font-semibold text-gray-900 mb-3">Color</h3>
-              <div className="flex flex-wrap gap-2">
-                {product.colors.map((color) => (
+          <div className="mb-6">
+            <h3 className="font-semibold text-gray-900 mb-3">Color</h3>
+            <div className="flex flex-wrap gap-2">
+              {product.colors && product.colors.length > 0 ? (
+                product.colors.map((color) => (
                   <button
                     key={color}
                     onClick={() => setSelectedColor(color)}
@@ -167,10 +174,12 @@ Please confirm availability.`;
                   >
                     {color}
                   </button>
-                ))}
-              </div>
+                ))
+              ) : (
+                <span className="text-gray-500 text-sm">No colors available</span>
+              )}
             </div>
-          )}
+          </div>
 
           {/* Quantity Selection */}
           <div className="mb-6">
@@ -187,7 +196,7 @@ Please confirm availability.`;
               >
                 -
               </button>
-              <span className="text-lg font-semibold w-12 text-center">{quantity}</span>
+              <span className="text-lg font-semibold w-12 text-center border border-gray-300 rounded-md py-1 bg-white">{quantity}</span>
               <button
                 onClick={() => handleQuantityChange(quantity + 1)}
                 disabled={quantity >= product.stock}
