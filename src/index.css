@@ -1,0 +1,355 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Dynamic Theme */
+:root {
+  --primary-color: #0f0f0f;
+  --secondary-color: #1a1a2e;
+  --accent-color: #d4af37;
+  --background-color: #0a0a0a;
+  --text-color: #ffffff;
+  --max-width: 1280px;
+  --padding: 1rem;
+  --border-radius: 0.75rem;
+  --font-size: 16px;
+}
+
+/* Luxury Fashion Brand Styling */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Elegant Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Premium Button Styling */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #f4d03f 100%);
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #f4d03f 0%, var(--accent-color) 100%);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #f4d03f 100%);
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  background: linear-gradient(135deg, #f4d03f 0%, var(--accent-color) 100%);
+}
+
+/* Gold Gradient Button */
+.gold-gradient-btn {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #f4d03f 100%);
+  color: var(--primary-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-gradient-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #f4d03f 0%, var(--accent-color) 100%);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.gold-gradient-btn:hover::before {
+  left: 0;
+}
+
+.gold-gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  color: var(--primary-color);
+}
+
+/* Premium Card Styling */
+.card-premium {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
+/* Elegant Header Styling */
+.header-premium {
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Premium Navigation */
+.nav-link-premium {
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link-premium:hover {
+  color: var(--accent-color);
+}
+
+.nav-link-premium::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), #f4d03f);
+  transition: width 0.3s ease;
+}
+
+.nav-link-premium:hover::after {
+  width: 100%;
+}
+
+/* Elegant Product Cards */
+.product-card-premium {
+  background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.product-card-premium:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Premium Form Styling */
+.form-input-premium {
+  border: 2px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  transition: all 0.3s ease;
+  background: rgba(15, 15, 15, 0.8);
+  color: var(--text-color);
+}
+
+.form-input-premium:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  outline: none;
+  background: rgba(15, 15, 15, 0.9);
+}
+
+/* Elegant Footer */
+.footer-premium {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--text-color);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Premium WhatsApp Float Button */
+.whatsapp-float-premium {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.whatsapp-float-premium:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+/* Elegant Loading Animation */
+.loading-premium {
+  background: linear-gradient(90deg, var(--accent-color), #f4d03f, var(--accent-color));
+  background-size: 200% 100%;
+  animation: loading-shimmer 2s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 15, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--accent-color), #f4d03f);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #f4d03f, var(--accent-color));
+}
+
+/* Elegant Selection */
+::selection {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+/* Premium Focus States */
+.focus-premium:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+}
+
+/* Elegant Transitions */
+.transition-premium {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Premium Text Gradients */
+.text-gradient-premium {
+  background: linear-gradient(135deg, var(--accent-color), #f4d03f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Elegant Border Gradients */
+.border-gradient-premium {
+  border: 2px solid;
+  border-image: linear-gradient(135deg, var(--accent-color), #f4d03f) 1;
+}
+
+/* Premium Background Patterns */
+.bg-pattern-premium {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(15, 15, 15, 0.3) 0%, transparent 50%);
+}
+
+/* Dark Theme Enhancements */
+.bg-dark-section {
+  background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%);
+}
+
+.bg-darker-section {
+  background: linear-gradient(145deg, #050505 0%, #0f0f0f 100%);
+}
+
+/* Gold Accent Elements */
+.gold-accent {
+  color: var(--accent-color);
+}
+
+.gold-border {
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.gold-shadow {
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 768px) {
+  .card-premium:hover {
+    transform: translateY(-3px);
+  }
+  
+  .product-card-premium:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000000;
+    --text-color: #ffffff;
+  }
+  
+  .card-premium,
+  .product-card-premium {
+    background: linear-gradient(145deg, #1a1a1a 0%, #0f0f0f 100%);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Additional Luxury Elements */
+.luxury-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.luxury-text-shadow {
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #f4d03f 50%, var(--accent-color) 100%);
+}
+
+.black-gradient-bg {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+/* Enhanced Gold Button Styles */
+.bg-gradient-to-r.from-accent-color.to-yellow-500 {
+  background: linear-gradient(to right, var(--accent-color), #f4d03f);
+}
+
+.bg-gradient-to-r.from-accent-color.to-yellow-500:hover {
+  background: linear-gradient(to right, #f4d03f, var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+}
